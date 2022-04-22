@@ -62,8 +62,6 @@ function cargarExcel()
 
 }
 
-
-
 //Funcion para notificaciones de error
 function msgError(msg)
 {

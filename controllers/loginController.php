@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/LoginModel.php";
+include_once "../models/LoginModel.php";
 
 //Instanciamos la clase LoginModel para poder llamar sus metodos.
 $login = new LoginModel();

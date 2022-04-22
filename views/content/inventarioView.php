@@ -25,44 +25,6 @@
 		transform: translate(0)
 	}
 
-	.margen_input {
-		position: relative;
-		margin: 10px 0 20px;
-	}
-
-	input {
-		font-size: 18px;
-		padding: 10px 10px 10px 5px;
-		display: block;
-		width: 300px;
-		border: none;
-		border-bottom: 1px solid #757575;
-	}
-
-	input:focus {
-		outline: none;
-	}
-
-	label {
-		color: #757575;
-		font-size: 18px;
-		font-weight: normal;
-		position: absolute;
-		pointer-events: none;
-		left: 5px;
-		top: 10px;
-		transition: 0.2s ease all;
-		-moz-transition: 0.2s ease all;
-		-webkit-transition: 0.2s ease all;
-	}
-
-	input:focus~label,
-
-	input:valid~label {
-		top: -20px;
-		font-size: 14px;
-		color: #757575;
-	}
 </style>
 <!-- start page title -->
 <div class="row">
@@ -119,38 +81,33 @@
 
 													<div class="row">
 
-														<div class="col-lg-2">
+														<div class="col-lg-2 mb-3">
 															<div class="input-group margen_input">
 																<input type="text" class="form-control" id="iptCodBarras" data-index="2" placeholder="Buscar por código">
-																<label>Código de barras</label>
 															</div>
 														</div>
 
-														<div class="col-lg-2">
+														<div class="col-lg-2 mb-3">
 															<div class="input-group margen_input">
 																<input type="text" class="form-control" id="iptCategoria" data-index="3" placeholder="Buscar por categoría">
-																<label>Categoría</label>
 															</div>
 														</div>
 
-														<div class="col-lg-2">
+														<div class="col-lg-2 mb-3">
 															<div class="input-group margen_input">
 																<input type="text" class="form-control" id="iptProducto" data-index="4" placeholder="Buscar por producto">
-																<label>Producto</label>
 															</div>
 														</div>
 
-														<div class="col-lg-2">
+														<div class="col-lg-2 mb-3">
 															<div class="input-group margen_input">
 																<input type="text" class="form-control" id="iptPreVentDesde" placeholder="Buscar por precio desde">
-																<label>P. Venta desde</label>
 															</div>
 														</div>
 
-														<div class="col-lg-2">
+														<div class="col-lg-2 mb-3">
 															<div class="input-group margen_input">
 																<input type="text" class="form-control" id="iptPreVentHasta" placeholder="Buscar por precio hasta">
-																<label>P. Venta hasta</label>
 															</div>
 														</div>
 														<div class="col-lg-2">
@@ -167,10 +124,9 @@
 									</div>
 								</div>
 
-
 								<div class="row">
 									<div class="col-lg-3 mb-3">
-										<button type="button" class="btn btn-primary form-control waves-effect waves-light" data-toggle="modal" data-target="#myModalNuevoProducto" id="btnModalNuevoUsuario" data-backdrop="static" data-keyboard="false">
+										<button type="button" class="btn btn-primary form-control waves-effect waves-light" data-toggle="modal" data-target="#myModalNuevoProducto" id="btnModalNuevoProducto" data-backdrop="static" data-keyboard="false">
 											<i class="mdi mdi-plus"></i> Nuevo producto
 										</button>
 									</div>
@@ -198,7 +154,7 @@
 								</div>
 							</form>
 						</div>
-					</div> <!-- row(34)-->
+					</div> <!-- End row-->
 
 					<!-- DataTable -->
 					<div id="selection-datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
@@ -234,120 +190,98 @@
 					</div>
 					<!-- Fin datatable-->
 
-
-					<!-- Modal -->
-					<div class="modal modalAnimate fade" id="myModalNuevoProducto" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabelcenter" style="display: none;" aria-hidden="true">
-						<div class="modal-dialog modal-lg zoomInRight animated modal-dialog-centered">
-							<div class="modal-content">
-
-								<div class="modal-header">
-								</div>
-
-								<div class="modal-body">
-									<!--Contenido del modal -->
-
-									<div class="container">
-
-										<form class="form-horizontal">
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Tipo de rol</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuTipRol" name="verUsuTipRol" value="" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Tipo documento</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuTipDoc" name="verUsuTipDoc" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">N° documento</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuNumDoc" name="verUsuNumDoc" value="" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Nombres</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuNombres" name="verUsuNombres" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Apellidos</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verApeCom" name="verApeCom" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Usuario</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuNomUsu" name="verUsuNomUsu" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Correo electrónico</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuCorreo" name="verUsuCorreo" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Celular</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuCel" name="verUsuCel" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Telefono</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuTel" name="verUsuTel" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Dirección</label>
-												<div class="col-lg-9">
-													<input type="text" class="form-control" id="verUsuDirec" name="verUsuDirec" readonly="">
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<label class="col-lg-3 col-form-label">Imágen</label>
-												<div class="col-lg-9" id="verUsuImg"></div>
-											</div>
-
-										</form>
-									</div>
+					<!-- Fin Contenido  -->
+				</div> <!-- Fin card-body -->
+			</div><!-- End cardCollpase4 -->
+		</div><!-- End card -->
+	</div><!-- End col-lg-12 -->
+</div>
 
 
 
-									<!-- Fin del contenido del modal -->
+<!-- Modal nuevo usuario -->
+<div class="modal fade" id="myModalNuevoProducto" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabelcenter">
+	<div class="modal-dialog modal-lg zoomInRight animated modal-dialog-centered">
+		<div class="modal-content">
 
-								</div>
+			<div class="modal-header ">
+			</div>
 
-								<div class="modal-footer">
-									<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal"><i class=" mdi mdi-close-octagon"></i> Cerrar</button>
-								</div>
+			<div class="modal-body">
+				<!--Contenido del modal -->
+
+				<form id="formularioModal">
+					<div class="row">
+
+						<div class="form-group col-lg-12 col-xs-12">
+							<div class="alert alert-info alert-dismissible fade show" role="alert">
+								<span><i class=" mdi mdi-information"></i> El símbolo <label for="uname"><span class="campoObligatorio">(*)</span></label> hace referencia que el campo es obligatorio.</span>
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
 							</div>
 						</div>
-					</div>
-					<!-- Fin modal -->
 
-					<!-- Fin Contenido  -->
-				</div> <!-- Fin card-body(32) -->
+						<div class="form-group col-lg-6 col-xs-12">
+							<label>Código de barras <span class="campoObligatorio">(*)</span></label>
+							<input type="hidden" class="form-control" id="inputIdProducto" name="inputIdProducto">
+							<input onkeypress="return soloNumeros(event)" type="text" class="form-control" placeholder="Código de barras" id="inputCodBarras" name="inputCodBarras">
+						</div>
+
+						<div class="form-group col-lg-6 col-xs-12">
+							<label>Categoría <span class="campoObligatorio">(*)</span></label>
+							<select class="js-example-responsive form-control" id="selectCategoria" name="selectCategoria">
+								<option value="">-- Seleccionar --</option>
+							</select>
+						</div>
+
+					
+						<div class="form-group col-lg-12 col-xs-12 mb-3">
+							<label>Descripción <span class="campoObligatorio">(*)</span></label>
+							<input type="text" class="form-control" placeholder="Descripción" id="inputDescripcion" name="inputDescripcion">
+						</div>
+
+						<div class="form-group col-lg-4 col-xs-12 mb-3">
+							<label>Precio compra <span class="campoObligatorio">(*)</span></label>
+							<input type="text" class="form-control" placeholder="Precio compra" id="inputPreCompra" name="inputPreCompra">
+						</div>
+
+						<div class="form-group col-lg-4 col-xs-12 mb-3">
+							<label>Precio venta <span class="campoObligatorio">(*)</span></label>
+							<input type="text" class="form-control" placeholder="Precio venta" id="inputPreVenta" name="inputPreVenta">
+						</div>
+
+						<div class="form-group col-lg-4 col-xs-12 mb-3" id="divUsuario">
+							<label>Utilidad</label>
+							<input type="text" class="form-control" placeholder="Utilidad" id="inputUtilidad" name="inputUtilidad" disabled>
+						</div>
+
+						<div class="form-group col-lg-6 col-xs-12 mb-3" id="divPass">
+							<label>Stock <span class="campoObligatorio">(*)</span></label>
+							<input type="number" class="form-control" placeholder="Stock" id="inputStock" name="inputStock">
+						</div>
+
+						<div class="form-group col-lg-6 col-xs-12 mb-3" id="divPass">
+							<label>Minimo Stock <span class="campoObligatorio">(*)</span></label>
+							<input type="number" class="form-control" placeholder="Minimo stock" id="inputMinimoStock" name="inputMinimoStock">
+						</div>
+
+					</div>
+				</form>
+
+				<!-- Fin del contenido del modal -->
+
+			</div>
+
+			<div class="modal-footer">
+				<button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" onclick="limpiarCampos('nuevoProducto');"><i class=" mdi mdi-close-octagon"></i> Cerrar</button>
+				<button type="button" class="btn btn-success waves-effect waves-light" onclick="guardar();"><i class="mdi mdi-content-save"></i> Guardar</button>
 			</div>
 		</div>
-		<!-- end card-->
 	</div>
+</div>
+<!-- Fin modal -->
 
 
-	<script src="./ajax/inventarioView.js"></script>
+
+<script src="./ajax/inventarioView.js"></script>

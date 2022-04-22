@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/HomeModel.php";
+include_once "../models/HomeModel.php";
 
 //Instanciamos la clase, para poder llamar sus metodos.
 $home = new HomeModel();

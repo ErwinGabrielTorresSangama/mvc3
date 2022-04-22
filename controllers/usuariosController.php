@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/UsuariosModel.php";
+include_once "../models/UsuariosModel.php";
 
 //Instanciamos la clase, para poder llamar sus metodos.
 $usuario = new UsariosModel();

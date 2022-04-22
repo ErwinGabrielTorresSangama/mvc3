@@ -9,7 +9,6 @@
 				
 				if(is_file("./views/content/".$vista."View.php")){
 					$contenido="./views/content/".$vista."View.php";
-					
 				}else{
 					$contenido="login";
 				}

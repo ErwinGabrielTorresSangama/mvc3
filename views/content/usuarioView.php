@@ -69,8 +69,31 @@
 						</div>
 					</div> <!-- row(34)-->
 
-					<!-- Modal -->
-					<div class="modal fade" id="myModalNuevoUsuario" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabelcenter">
+					<!-- DataTable -->
+					<div id="selection-datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
+						<div class="row">
+							<div class="col-lg-12">
+								<table id="tablaUsuarios" class="table  table-striped dt-responsive nowrap dataTable no-footer dtr-inline" style="width: 100%;">
+									<thead>
+										<tr role="row" class="bg-secondary text-white">
+											<th>N°</th>
+											<th>Tipo de rol</th>
+											<th>Nombre</th>
+											<th>Apellidos</th>
+											<th>Estado</th>
+											<th>Acciones</th>
+										</tr>
+									</thead>
+
+									<tbody></tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+					<!-- Fin datatable-->
+
+										<!-- Modal nuevo usuario -->
+										<div class="modal fade" id="myModalNuevoUsuario" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabelcenter">
 						<div class="modal-dialog modal-lg zoomInRight animated modal-dialog-centered">
 							<div class="modal-content">
 
@@ -189,9 +212,9 @@
 							</div>
 						</div>
 					</div>
-					<!-- Fin modal -->
+					<!-- Fin modal nuevo usuario -->
 
-					<!-- Modal -->
+					<!-- Modal ver usuario -->
 					<div class="modal modalAnimate fade" id="myModalVerUsuario" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabelcenter" style="display: none;" aria-hidden="true">
 						<div class="modal-dialog modal-lg zoomInRight animated modal-dialog-centered">
 							<div class="modal-content">
@@ -296,37 +319,14 @@
 							</div>
 						</div>
 					</div>
-					<!-- Fin modal -->
-
-					<!-- DataTable -->
-					<div id="selection-datatable_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
-						<div class="row">
-							<div class="col-lg-12">
-								<table id="tablaUsuarios" class="table  table-striped dt-responsive nowrap dataTable no-footer dtr-inline" style="width: 100%;">
-									<thead>
-										<tr role="row" class="bg-secondary text-white">
-											<th>N°</th>
-											<th>Tipo de rol</th>
-											<th>Nombre</th>
-											<th>Apellidos</th>
-											<th>Estado</th>
-											<th>Acciones</th>
-										</tr>
-									</thead>
-
-									<tbody></tbody>
-								</table>
-							</div>
-						</div>
-					</div>
-					<!-- Fin datatable-->
+					<!-- Fin modal ver usuario -->
 
 					<!-- Fin Contenido  -->
 				</div> <!-- Fin card-body(32) -->
 			</div>
-		</div>
-		<!-- end card-->
-	</div>
+		</div><!-- End card-->
+	</div><!-- End col-lg-12-->
+</div><!-- End row-->
 
 
-	<script src="./ajax/usuariosView.js"></script>
+<script src="./ajax/usuariosView.js"></script>

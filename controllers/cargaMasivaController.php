@@ -1,7 +1,7 @@
 <?php
 
-require_once "../models/CargaMasivaModel.php";
-include '../vendor/autoload.php';
+include_once "../models/CargaMasivaModel.php";
+include_once '../vendor/autoload.php';
 
 
 //Instanciamos la clase, para poder llamar sus metodos.

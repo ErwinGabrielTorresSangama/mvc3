@@ -28,7 +28,7 @@ $("#btnIngresar").on("click",function(){
                 }
 
         }).done(function(resp) {
-            //console.log(resp);
+            console.log(resp);
             if(resp==0) 
             {
                 msg = "Usuario o contraseña incorrecta.";

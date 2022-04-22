@@ -1,6 +1,6 @@
 <?php
 //Incluimos incialmente la conexion a la base de datos
-require_once "../config/conexionBD.php";
+include_once "../config/conexionBD.php";
 
 
 

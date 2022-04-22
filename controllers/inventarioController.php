@@ -1,6 +1,6 @@
 <?php
 
-require_once "../models/InventarioModel.php";
+include_once "../models/InventarioModel.php";
 
 //Instanciamos la clase, para poder llamar sus metodos.
 $inventario = new InventarioModel();
@@ -8,53 +8,31 @@ $inventario = new InventarioModel();
 //Capturamos los valores de POST que vienen de la vista,
 //La funcion  trim de php elimina los espacios en blanco al inicio y al final de un texto.
 
-$apePaternoGen  = isset($_POST["apePaterno"])   ? trim($_POST["apePaterno"])     :"";
-
-
+$idProducto         = isset($_POST["inputIdProducto"]) ? trim($_POST["inputIdProducto"])  :"";
+$codProducto          = isset($_POST["inputCodBarras"])  ? trim($_POST["inputCodBarras"])   :"";
+$idCategoria        = isset($_POST["selectCategoria"]) ? trim($_POST["selectCategoria"])  :"";
+$descripProducto    = isset($_POST["inputDescripcion"])  ? trim($_POST["inputDescripcion"])   :"";
+$preCompra          = isset($_POST["inputPreCompra"]) ? trim($_POST["inputPreCompra"])  :"";
+$precVenta          = isset($_POST["inputPreVenta"])   ? trim($_POST["inputPreVenta"])    :"";
+$utilidad           = isset($_POST["inputUtilidad"])   ? trim($_POST["inputUtilidad"])    :"";
+$stock              = isset($_POST["inputStock"]) ? trim($_POST["inputStock"])  :"";
+$minStock           = isset($_POST["inputMinimoStock"])    ? trim($_POST["inputMinimoStock"])     :"";
 
 switch($_GET["op"])
 {
     
     case 'guardar':
-        //Si el usuario no a seleccionado ningun archivo en el objeto fornulario imgen,
-        //Si no existe ningun archivo seleccionado  o si no ha sido cargado ningun archivo en el campo imagen del fornulario
-        if(!isset($_FILES['inputFile']['tmp_name']) || !is_uploaded_file($_FILES['inputFile']['tmp_name'])) 
+    
+        if(empty($$idProducto))
         {
-            //la variable imagen va ser igual a vacia. Al momento de editar vamo a tener un inconveniente pero lo vamos arreglar 
-            $imagen =" ";
-            //caso contrario por seguridad para que los usuarios no suban codigo malicioso
-        }else
-        {
-            print_r($imagen);
-            //vamos obtener la extension de nuestro archivo
-            $ext = explode(".", $_FILES['inputFile']['name']);
-            //validar el tipo de extension que vamos a permitir
-            //si mi objeto imagen es igual a tipo jpg
-            if($_FILES['inputFile']['type'] =='image/jpg' || $_FILES['inputFile']['type'] =='image/jpeg' || $_FILES['inputFile']['type'] =='image/png')
-            {
-                //se va cargar en unca carpeta dentro de nuestro sistema
-                //en nombre d ela variable se va renombrar urtilizando la funcion microtime(con un formato de tiempo)
-                $imagen=round(microtime(true)).'.'.end($ext); 
-
-                //subimos el archivo
-                move_uploaded_file($_FILES['inputFile']['tmp_name'], "../views/images/files/" .$imagen);
-            }
-        }
-
-       
-
-        //Rempplazmos el atributo $clave por claveHash 
-        if(empty($idUsuario)) //Si $idUsuario no esta vacio
-        {
-             //Encriptando la clave a HASH SHA256 
-            $claveHash = hash("SHA256",$password);
-            $rspta = $usuario->insertarUsuario($idRol,$tipoDocumento,$numDocumento,$nombres,$apePaterno,$apeMaterno,$nameUsu,$claveHash,$correo,$celular,$telefono,$direccion,$imagen); 
+            //vamos a insertar
+            $rspta = $inventario->insertarProducto($codProducto,$idCategoria,$descripProducto,$preCompra,$precVenta,$utilidad,$stock,$minStock); 
             echo $rspta;
                        
-
+            //Caso contrario vamos a editar
         }else //Si la variable idUsuario viene llena, es decir no esta vacia, entonces quiero editar
         {
-           $rspta = $usuario->editarUsuario($idUsuario,$idRol,$tipoDocumento,$numDocumento,$nombres,$apePaterno,$apeMaterno,$nameUsu,$password,$correo,$celular,$telefono,$direccion,$imagen); 
+           $rspta = $inventario->editarProducto($idUsuario,$idRol,$tipoDocumento,$numDocumento,$nombres,$apePaterno,$apeMaterno,$nameUsu,$password,$correo,$celular,$telefono,$direccion,$imagen); 
            echo $rspta;
            
         }
@@ -117,6 +95,20 @@ switch($_GET["op"])
                 "aaData"=>$data //el array que alamcena todos los registros
             );
             echo json_encode($results); //este array que estamos mostrando va ser utilizado por datable
+    break;
+
+    case 'listarSelectCat':
+
+        $rspta =$inventario->listarSelectCat(); 
+        $arreglo = array(); 
+        while($row = $rspta->fetchObject())
+        {
+             $arreglo[] = $row;
+
+        }
+        echo json_encode($arreglo);
+    
+
     break;
 
 

@@ -3,3 +3,6 @@ RewriteEngine on
 RewriteCond {REQUEST_FILENAME} !-f
 #RewriteCond {REQUEST_FILENAME} !-d
 RewriteRule ^([a-zA-Z0-9/]+)$ index.php?url=$1
+php_flag output_buffering On
+
+#Linea 6 .- https://subinsb.com/php-output-buffering/

@@ -4,7 +4,7 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Gabotorr</title>
+        <title>ErwinTorres</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
@@ -46,23 +46,14 @@
 
         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-
-
-
-
-
-    
-
-
-      
-
        
     </head>
 
     <body>
-
         <?php
-            require_once "controllers/RoutesController.php";
+            /*Para nuestra conveniencia vamos a trabajr con include_once, para no tener problemas con el servidor*/
+        
+            include_once "controllers/RoutesController.php";
             $newView = new viewController();
             $vistaR = $newView->getCtrViews();
             //var_dump($vistaR);
@@ -71,10 +62,10 @@
             {
                 if($vistaR=="login")
                 {
-                    require_once "./views/content/loginView.php";  
+                    include_once "./views/content/loginView.php";  
 
                 }else{
-                    require_once "./views/content/error404View.php";  
+                    include_once "./views/content/error404View.php";  
                 }
 
             }
@@ -117,7 +108,7 @@
                         <!-- Aqui ira el contenido de las vistas -->
                         <div class="page-wrapper">
                                 <?php
-                                require_once $vistaR; 
+                                include_once $vistaR; 
                                 ?> 
                         </div>
 

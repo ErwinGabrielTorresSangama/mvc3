@@ -7,9 +7,9 @@
 	
 	$plantilla = new viewController();
 	$plantilla->getCtrTemplate();
-
-
-
-
-
-?>
+	
+/*Mostrar url
+	$host = $_SERVER["HTTP_HOST"];
+	$url = $_SERVER["REQUEST_URI"];
+	echo "http://" . $host . $url;
+*/
